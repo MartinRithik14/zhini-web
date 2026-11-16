@@ -15,14 +15,18 @@
     rel="stylesheet" />
   <style>
     @layer base {
-      html, body {
+
+      html,
+      body {
         margin: 0;
         padding: 0;
       }
+
       body {
         overscroll-behavior-y: none;
       }
     }
+
     ::-webkit-scrollbar {
       display: none;
     }
@@ -71,18 +75,18 @@
 <body class="bg-surface font-body-md text-on-surface antialiased selection:bg-blue-100 selection:text-primary">
 
   <!-- NAVBAR -->
-  <header class="fixed top-0 left-0 right-0 z-50 bg-[#F5F8FF]/90 backdrop-blur-xl border-b border-border-subtle transition-all duration-300">
+  <header
+    class="fixed top-0 left-0 right-0 z-50 bg-[#F5F8FF]/90 backdrop-blur-xl border-b border-border-subtle transition-all duration-300">
     <div class="h-16 sm:h-20 max-w-[1440px] mx-auto px-4 sm:px-6 md:px-12 flex items-center justify-between">
       <a href="index.html" class="flex items-center gap-2.5 sm:gap-3">
-        <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-primary flex items-center justify-center text-white font-bold font-headline-sm shadow-sm text-base sm:text-lg">
-          Z
-        </div>
+        <img src="./assets/zhini_logo.png" alt="ZHINI Logo"
+          class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl object-cover shadow-sm border border-border-subtle" />
         <div class="flex flex-col justify-center">
           <div class="flex items-center gap-1.5">
-            <span class="font-headline-sm text-base sm:text-lg tracking-tight text-on-surface leading-none font-bold">ZHINI</span>
-            <span class="px-1.5 py-0.5 rounded-full bg-blue-100 text-primary font-label-sm text-[9px] sm:text-[10px] leading-none font-bold">AI</span>
+            <span
+              class="font-headline-sm text-base sm:text-lg tracking-tight text-on-surface leading-none font-bold">ZHINI</span>
           </div>
-          <span class="font-label-sm text-[11px] sm:text-xs text-text-muted mt-0.5">Your Home's AI Genie</span>
+
         </div>
       </a>
 
@@ -112,7 +116,8 @@
     </div>
 
     <!-- Mobile Slide-Down Menu -->
-    <div id="mobile-menu" class="hidden lg:hidden px-4 pt-2 pb-6 bg-[#F5F8FF]/95 backdrop-blur-xl border-b border-border-subtle shadow-lg transition-all">
+    <div id="mobile-menu"
+      class="hidden lg:hidden px-4 pt-2 pb-6 bg-[#F5F8FF]/95 backdrop-blur-xl border-b border-border-subtle shadow-lg transition-all">
       <div class="flex flex-col space-y-2">
         <a class="mobile-nav-link px-4 py-3 rounded-xl font-label-md text-sm text-secondary hover:bg-surface-container-low hover:text-on-surface font-semibold"
           href="#problem">The Problem</a>
@@ -133,31 +138,42 @@
 
   <main class="w-full pt-16 sm:pt-20 bg-surface">
     <!-- SECTION 1: HERO -->
-    <section class="relative w-full max-w-[1440px] mx-auto px-4 sm:px-6 md:px-12 py-12 sm:py-16 lg:py-24 overflow-hidden">
+    <section
+      class="relative w-full max-w-[1440px] mx-auto px-4 sm:px-6 md:px-12 py-12 sm:py-16 lg:py-24 overflow-hidden">
       <!-- Glow ambient background -->
-      <div class="absolute -top-32 -left-20 w-72 sm:w-96 h-72 sm:h-96 bg-primary/10 rounded-full blur-3xl pointer-events-none -z-10"></div>
-      <div class="absolute top-1/4 right-0 w-72 sm:w-[480px] h-72 sm:h-[480px] bg-blue-300/15 rounded-full blur-3xl pointer-events-none -z-10"></div>
+      <div
+        class="absolute -top-32 -left-20 w-72 sm:w-96 h-72 sm:h-96 bg-primary/10 rounded-full blur-3xl pointer-events-none -z-10">
+      </div>
+      <div
+        class="absolute top-1/4 right-0 w-72 sm:w-[480px] h-72 sm:h-[480px] bg-blue-300/15 rounded-full blur-3xl pointer-events-none -z-10">
+      </div>
 
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
         <!-- Left Hero Content -->
         <div class="lg:col-span-7 flex flex-col justify-center text-left">
-          <div class="inline-flex items-center gap-2 self-start px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full bg-blue-100 text-primary mb-4 sm:mb-6">
+          <div
+            class="inline-flex items-center gap-2 self-start px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full bg-blue-100 text-primary mb-4 sm:mb-6">
             <span class="text-xs sm:text-sm">✨</span>
-            <span class="font-label-sm text-[11px] sm:text-xs tracking-wide font-semibold text-primary">Your Home's AI Genie</span>
+            <span class="font-label-sm text-[11px] sm:text-xs tracking-wide font-semibold text-primary">Your Home's AI
+              Genie</span>
           </div>
 
-          <h1 class="font-display-hero text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-on-surface tracking-tight font-extrabold leading-[1.18] sm:leading-[1.15]">
-            The AI-Powered Platform Connecting Households, Appliances, and Services — <span class="text-primary">Starting With a Simple Scan.</span>
+          <h1
+            class="font-display-hero text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-on-surface tracking-tight font-extrabold leading-[1.18] sm:leading-[1.15]">
+            The AI-Powered Platform Connecting Households, Appliances, and Services — <span
+              class="text-primary">Starting With a Simple Scan.</span>
           </h1>
 
           <p class="font-body-lg text-sm sm:text-base md:text-lg text-secondary mt-4 sm:mt-6 leading-relaxed max-w-2xl">
-            Build a single digital relationship around every household appliance. Keep warranties, maintenance history, and trusted repair support right at your fingertips.
+            Build a single digital relationship around every household appliance. Keep warranties, maintenance history,
+            and trusted repair support right at your fingertips.
           </p>
 
           <!-- DOWNLOAD BUTTONS -->
           <div id="download-zone" class="mt-6 sm:mt-8 flex flex-col items-start gap-3 w-full sm:w-auto">
-            <span class="font-label-sm text-[11px] sm:text-xs uppercase font-bold tracking-wider text-secondary">Get the Zhini App Today</span>
-            
+            <span class="font-label-sm text-[11px] sm:text-xs uppercase font-bold tracking-wider text-secondary">Get the
+              Zhini App Today</span>
+
             <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full sm:w-auto">
               <!-- App Store Badge -->
               <a id="appstore-link" target="_blank" rel="noopener noreferrer" href="#"
@@ -168,8 +184,12 @@
                   </path>
                 </svg>
                 <div class="flex flex-col text-left">
-                  <span class="text-[9px] sm:text-[10px] uppercase font-medium tracking-wider text-text-muted leading-none">Download on the</span>
-                  <span class="font-headline-sm text-sm font-semibold tracking-tight text-white leading-tight mt-0.5">App Store</span>
+                  <span
+                    class="text-[9px] sm:text-[10px] uppercase font-medium tracking-wider text-text-muted leading-none">Download
+                    on the</span>
+                  <span
+                    class="font-headline-sm text-sm font-semibold tracking-tight text-white leading-tight mt-0.5">App
+                    Store</span>
                 </div>
               </a>
 
@@ -183,8 +203,12 @@
                   </path>
                 </svg>
                 <div class="flex flex-col text-left">
-                  <span class="text-[9px] sm:text-[10px] uppercase font-medium tracking-wider text-text-muted leading-none">GET IT ON</span>
-                  <span class="font-headline-sm text-sm font-semibold tracking-tight text-white leading-tight mt-0.5">Google Play</span>
+                  <span
+                    class="text-[9px] sm:text-[10px] uppercase font-medium tracking-wider text-text-muted leading-none">GET
+                    IT ON</span>
+                  <span
+                    class="font-headline-sm text-sm font-semibold tracking-tight text-white leading-tight mt-0.5">Google
+                    Play</span>
                 </div>
               </a>
             </div>
@@ -198,11 +222,14 @@
 
         <!-- Right Hero Mockup Card -->
         <div class="lg:col-span-5 relative flex items-center justify-center mt-4 lg:mt-0">
-          <div class="relative w-full max-w-sm rounded-3xl p-3 bg-surface-card shadow-[0_20px_50px_rgba(15,28,63,0.08)] border border-border-subtle">
-            <div class="relative rounded-2xl overflow-hidden bg-[#0A1628] p-5 sm:p-6 text-white min-h-[360px] sm:min-h-[380px] flex flex-col justify-between">
+          <div
+            class="relative w-full max-w-sm rounded-3xl p-3 bg-surface-card shadow-[0_20px_50px_rgba(15,28,63,0.08)] border border-border-subtle">
+            <div
+              class="relative rounded-2xl overflow-hidden bg-[#0A1628] p-5 sm:p-6 text-white min-h-[360px] sm:min-h-[380px] flex flex-col justify-between">
               <div class="flex justify-between items-center pb-4 border-b border-[#16294A]">
                 <span class="text-xs uppercase tracking-wider text-text-muted font-bold">My Appliances</span>
-                <span class="text-xs px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-[#69F0AE] font-semibold">3 Active</span>
+                <span class="text-xs px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-[#69F0AE] font-semibold">3
+                  Active</span>
               </div>
               <div class="space-y-3 my-4">
                 <div class="p-3 rounded-xl bg-[#0F2038] border border-[#1E3A8A] flex items-center justify-between">
@@ -227,7 +254,8 @@
             </div>
 
             <!-- Floating Pill -->
-            <div class="absolute -top-3 -right-2 sm:-top-4 sm:-right-4 flex items-center gap-2 px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-xl bg-white shadow-lg border border-border-subtle">
+            <div
+              class="absolute -top-3 -right-2 sm:-top-4 sm:-right-4 flex items-center gap-2 px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-xl bg-white shadow-lg border border-border-subtle">
               <span class="material-symbols-outlined text-success text-base sm:text-lg">verified</span>
               <span class="text-xs font-bold text-on-surface">AI Document Vault</span>
             </div>
@@ -240,7 +268,8 @@
     <section id="problem" class="w-full py-16 sm:py-20 bg-surface-container-low">
       <div class="max-w-[1440px] mx-auto px-4 sm:px-6 md:px-12">
         <div class="flex flex-col items-center text-center max-w-3xl mx-auto">
-          <span class="font-label-sm text-xs font-bold text-primary tracking-widest uppercase mb-2">THE BREAKDOWN REALITY</span>
+          <span class="font-label-sm text-xs font-bold text-primary tracking-widest uppercase mb-2">THE BREAKDOWN
+            REALITY</span>
           <h2 class="font-headline-lg text-2xl sm:text-3xl lg:text-4xl text-on-surface tracking-tight font-bold">
             When an appliance breaks, everything stops.
           </h2>
@@ -250,8 +279,10 @@
         </div>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mt-10 sm:mt-12">
-          <div class="flex flex-col p-5 sm:p-6 rounded-2xl bg-surface-card border border-border-subtle shadow-sm hover:shadow-md transition-all">
-            <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-red-50 text-error flex items-center justify-center mb-4">
+          <div
+            class="flex flex-col p-5 sm:p-6 rounded-2xl bg-surface-card border border-border-subtle shadow-sm hover:shadow-md transition-all">
+            <div
+              class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-red-50 text-error flex items-center justify-center mb-4">
               <span class="material-symbols-outlined text-2xl">receipt_long</span>
             </div>
             <h3 class="font-headline-sm text-base sm:text-lg font-bold text-on-surface mb-2">Lost Documents</h3>
@@ -260,8 +291,10 @@
             </p>
           </div>
 
-          <div class="flex flex-col p-5 sm:p-6 rounded-2xl bg-surface-card border border-border-subtle shadow-sm hover:shadow-md transition-all">
-            <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-amber-50 text-warning flex items-center justify-center mb-4">
+          <div
+            class="flex flex-col p-5 sm:p-6 rounded-2xl bg-surface-card border border-border-subtle shadow-sm hover:shadow-md transition-all">
+            <div
+              class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-amber-50 text-warning flex items-center justify-center mb-4">
               <span class="material-symbols-outlined text-2xl">help_center</span>
             </div>
             <h3 class="font-headline-sm text-base sm:text-lg font-bold text-on-surface mb-2">No Service Clarity</h3>
@@ -270,8 +303,10 @@
             </p>
           </div>
 
-          <div class="flex flex-col p-5 sm:p-6 rounded-2xl bg-surface-card border border-border-subtle shadow-sm hover:shadow-md transition-all">
-            <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-blue-50 text-primary flex items-center justify-center mb-4">
+          <div
+            class="flex flex-col p-5 sm:p-6 rounded-2xl bg-surface-card border border-border-subtle shadow-sm hover:shadow-md transition-all">
+            <div
+              class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-blue-50 text-primary flex items-center justify-center mb-4">
               <span class="material-symbols-outlined text-2xl">schedule</span>
             </div>
             <h3 class="font-headline-sm text-base sm:text-lg font-bold text-on-surface mb-2">Missed Maintenance</h3>
@@ -280,8 +315,10 @@
             </p>
           </div>
 
-          <div class="flex flex-col p-5 sm:p-6 rounded-2xl bg-surface-card border border-border-subtle shadow-sm hover:shadow-md transition-all">
-            <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-slate-100 text-on-surface flex items-center justify-center mb-4">
+          <div
+            class="flex flex-col p-5 sm:p-6 rounded-2xl bg-surface-card border border-border-subtle shadow-sm hover:shadow-md transition-all">
+            <div
+              class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-slate-100 text-on-surface flex items-center justify-center mb-4">
               <span class="material-symbols-outlined text-2xl">history_toggle_off</span>
             </div>
             <h3 class="font-headline-sm text-base sm:text-lg font-bold text-on-surface mb-2">No Lifecycle Record</h3>
@@ -296,7 +333,8 @@
     <!-- SECTION 3: THE SOLUTION / HOW IT WORKS -->
     <section id="how-it-works" class="w-full py-16 sm:py-20 max-w-[1440px] mx-auto px-4 sm:px-6 md:px-12">
       <div class="flex flex-col items-center text-center max-w-3xl mx-auto">
-        <div class="inline-flex items-center px-3 py-1 rounded-full bg-blue-100 text-primary font-label-sm text-xs font-bold uppercase tracking-wider mb-2">
+        <div
+          class="inline-flex items-center px-3 py-1 rounded-full bg-blue-100 text-primary font-label-sm text-xs font-bold uppercase tracking-wider mb-2">
           SIMPLIFIED DOMESTIC OPERATIONS
         </div>
         <h2 class="font-headline-lg text-2xl sm:text-3xl lg:text-4xl text-on-surface tracking-tight font-bold">
@@ -308,9 +346,11 @@
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mt-10 sm:mt-14">
-        <div class="flex flex-col p-5 sm:p-6 rounded-2xl bg-surface-card border border-border-subtle shadow-sm hover:shadow-md transition-all">
+        <div
+          class="flex flex-col p-5 sm:p-6 rounded-2xl bg-surface-card border border-border-subtle shadow-sm hover:shadow-md transition-all">
           <div class="flex items-center justify-between mb-4">
-            <div class="w-10 h-10 rounded-xl bg-primary text-white font-headline-sm text-base flex items-center justify-center font-bold">
+            <div
+              class="w-10 h-10 rounded-xl bg-primary text-white font-headline-sm text-base flex items-center justify-center font-bold">
               01
             </div>
             <span class="px-2 py-0.5 rounded-md bg-blue-50 font-label-sm text-[10px] font-bold text-primary uppercase">
@@ -323,12 +363,15 @@
           </p>
         </div>
 
-        <div class="flex flex-col p-5 sm:p-6 rounded-2xl bg-surface-card border border-border-subtle shadow-sm hover:shadow-md transition-all">
+        <div
+          class="flex flex-col p-5 sm:p-6 rounded-2xl bg-surface-card border border-border-subtle shadow-sm hover:shadow-md transition-all">
           <div class="flex items-center justify-between mb-4">
-            <div class="w-10 h-10 rounded-xl bg-blue-100 text-primary font-headline-sm text-base flex items-center justify-center font-bold">
+            <div
+              class="w-10 h-10 rounded-xl bg-blue-100 text-primary font-headline-sm text-base flex items-center justify-center font-bold">
               02
             </div>
-            <span class="px-2 py-0.5 rounded-md bg-blue-50 font-label-sm text-[10px] font-bold text-secondary uppercase">
+            <span
+              class="px-2 py-0.5 rounded-md bg-blue-50 font-label-sm text-[10px] font-bold text-secondary uppercase">
               FREEDOM OF CHOICE
             </span>
           </div>
@@ -338,12 +381,15 @@
           </p>
         </div>
 
-        <div class="flex flex-col p-5 sm:p-6 rounded-2xl bg-surface-card border border-border-subtle shadow-sm hover:shadow-md transition-all">
+        <div
+          class="flex flex-col p-5 sm:p-6 rounded-2xl bg-surface-card border border-border-subtle shadow-sm hover:shadow-md transition-all">
           <div class="flex items-center justify-between mb-4">
-            <div class="w-10 h-10 rounded-xl bg-emerald-100 text-success font-headline-sm text-base flex items-center justify-center font-bold">
+            <div
+              class="w-10 h-10 rounded-xl bg-emerald-100 text-success font-headline-sm text-base flex items-center justify-center font-bold">
               03
             </div>
-            <span class="px-2 py-0.5 rounded-md bg-emerald-50 font-label-sm text-[10px] font-bold text-success uppercase">
+            <span
+              class="px-2 py-0.5 rounded-md bg-emerald-50 font-label-sm text-[10px] font-bold text-success uppercase">
               REAL-TIME DISPATCH
             </span>
           </div>
@@ -353,12 +399,15 @@
           </p>
         </div>
 
-        <div class="flex flex-col p-5 sm:p-6 rounded-2xl bg-surface-card border border-border-subtle shadow-sm hover:shadow-md transition-all">
+        <div
+          class="flex flex-col p-5 sm:p-6 rounded-2xl bg-surface-card border border-border-subtle shadow-sm hover:shadow-md transition-all">
           <div class="flex items-center justify-between mb-4">
-            <div class="w-10 h-10 rounded-xl bg-inverse-surface text-white font-headline-sm text-base flex items-center justify-center font-bold">
+            <div
+              class="w-10 h-10 rounded-xl bg-inverse-surface text-white font-headline-sm text-base flex items-center justify-center font-bold">
               04
             </div>
-            <span class="px-2 py-0.5 rounded-md bg-slate-100 font-label-sm text-[10px] font-bold text-secondary uppercase">
+            <span
+              class="px-2 py-0.5 rounded-md bg-slate-100 font-label-sm text-[10px] font-bold text-secondary uppercase">
               AUTOMATED PEACE
             </span>
           </div>
@@ -374,7 +423,8 @@
     <section class="w-full py-12 sm:py-16 max-w-[1440px] mx-auto px-4 sm:px-6 md:px-12">
       <div class="p-6 sm:p-8 lg:p-12 rounded-3xl bg-surface-card border border-border-subtle shadow-sm">
         <div class="max-w-2xl mb-6 sm:mb-8 text-left">
-          <span class="font-label-sm text-xs font-bold text-primary uppercase tracking-widest">DESIGNED FOR URBAN FAMILIES</span>
+          <span class="font-label-sm text-xs font-bold text-primary uppercase tracking-widest">DESIGNED FOR URBAN
+            FAMILIES</span>
           <h2 class="font-headline-lg text-2xl sm:text-3xl font-bold text-on-surface tracking-tight mt-1">
             Every Machine in Your Home, Fully Protected.
           </h2>
@@ -387,45 +437,42 @@
           <div class="p-5 sm:p-6 rounded-2xl bg-surface border border-border-subtle">
             <span class="material-symbols-outlined text-primary text-2xl mb-3">cloud_done</span>
             <h3 class="font-headline font-bold text-sm sm:text-base text-on-surface">Zero Paper Clutter</h3>
-            <p class="text-xs text-secondary mt-1">Every receipt, invoice, and warranty card permanently vaulted in your cloud ledger.</p>
+            <p class="text-xs text-secondary mt-1">Every receipt, invoice, and warranty card permanently vaulted in your
+              cloud ledger.</p>
           </div>
           <div class="p-5 sm:p-6 rounded-2xl bg-surface border border-border-subtle">
             <span class="material-symbols-outlined text-warning text-2xl mb-3">notification_important</span>
             <h3 class="font-headline font-bold text-sm sm:text-base text-on-surface">Warranty Radar</h3>
-            <p class="text-xs text-secondary mt-1">Smart notifications warn you well before coverage lapses or warranties expire.</p>
+            <p class="text-xs text-secondary mt-1">Smart notifications warn you well before coverage lapses or
+              warranties expire.</p>
           </div>
           <div class="p-5 sm:p-6 rounded-2xl bg-surface border border-border-subtle">
             <span class="material-symbols-outlined text-success text-2xl mb-3">verified</span>
             <h3 class="font-headline font-bold text-sm sm:text-base text-on-surface">Digital Service Log</h3>
-            <p class="text-xs text-secondary mt-1">A transparent repair history that preserves the verifiable health and resale value of your appliances.</p>
+            <p class="text-xs text-secondary mt-1">A transparent repair history that preserves the verifiable health and
+              resale value of your appliances.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- SECTION 5: ABOUT SECTION -->
-    <section id="about" class="w-full py-12 sm:py-16 bg-surface-container-low">
-      <div class="max-w-[1440px] mx-auto px-4 sm:px-6 md:px-12 text-center">
-        <span class="font-label-sm text-xs font-bold text-primary tracking-widest uppercase mb-2">PRODUCT &amp; ENGINEERING</span>
-        <h2 class="font-headline-lg text-2xl sm:text-3xl font-bold text-on-surface">Built by atom8 IT solutions</h2>
-        <p class="text-secondary max-w-xl mx-auto mt-2 text-xs sm:text-sm">
-          Designed by engineers combining high-performance cloud architecture with an understanding of real-world Indian household operations.
-        </p>
-      </div>
-    </section>
+
 
     <!-- SECTION 6: BOTTOM DOWNLOAD CALL TO ACTION -->
     <section class="w-full max-w-[1440px] mx-auto px-4 sm:px-6 md:px-12 my-10 sm:my-16">
-      <div class="relative w-full rounded-3xl bg-inverse-surface text-white p-6 sm:p-10 lg:p-16 text-center overflow-hidden shadow-xl">
+      <div
+        class="relative w-full rounded-3xl bg-inverse-surface text-white p-6 sm:p-10 lg:p-16 text-center overflow-hidden shadow-xl">
         <div class="relative z-10 max-w-2xl mx-auto flex flex-col items-center">
-          <h2 class="font-display-hero text-2xl sm:text-3xl lg:text-5xl text-white font-extrabold tracking-tight leading-tight">
+          <h2
+            class="font-display-hero text-2xl sm:text-3xl lg:text-5xl text-white font-extrabold tracking-tight leading-tight">
             Ready to put your home appliance care on autopilot?
           </h2>
           <p class="font-body-lg text-xs sm:text-base text-text-muted mt-3 sm:mt-4 leading-relaxed">
             Download Zhini and register your first appliance in seconds.
           </p>
 
-          <div class="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4 mt-6 sm:mt-8 w-full sm:w-auto">
+          <div
+            class="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4 mt-6 sm:mt-8 w-full sm:w-auto">
             <a target="_blank" rel="noopener noreferrer" href="#"
               class="inline-flex items-center justify-center gap-3 px-5 py-3 sm:px-6 sm:py-3.5 rounded-xl bg-white text-on-surface hover:bg-slate-100 transition-all shadow-md group">
               <svg class="w-6 h-6 fill-current text-on-surface shrink-0" viewBox="0 0 24 24">
@@ -434,8 +481,12 @@
                 </path>
               </svg>
               <div class="flex flex-col text-left">
-                <span class="text-[9px] sm:text-[10px] uppercase font-medium tracking-wider text-secondary leading-none">Download on the</span>
-                <span class="font-headline-sm text-sm font-semibold tracking-tight text-on-surface leading-tight mt-0.5">App Store</span>
+                <span
+                  class="text-[9px] sm:text-[10px] uppercase font-medium tracking-wider text-secondary leading-none">Download
+                  on the</span>
+                <span
+                  class="font-headline-sm text-sm font-semibold tracking-tight text-on-surface leading-tight mt-0.5">App
+                  Store</span>
               </div>
             </a>
 
@@ -448,8 +499,12 @@
                 </path>
               </svg>
               <div class="flex flex-col text-left">
-                <span class="text-[9px] sm:text-[10px] uppercase font-medium tracking-wider text-secondary leading-none">GET IT ON</span>
-                <span class="font-headline-sm text-sm font-semibold tracking-tight text-on-surface leading-tight mt-0.5">Google Play</span>
+                <span
+                  class="text-[9px] sm:text-[10px] uppercase font-medium tracking-wider text-secondary leading-none">GET
+                  IT ON</span>
+                <span
+                  class="font-headline-sm text-sm font-semibold tracking-tight text-on-surface leading-tight mt-0.5">Google
+                  Play</span>
               </div>
             </a>
           </div>
@@ -460,12 +515,9 @@
 
   <!-- FOOTER -->
   <footer class="w-full bg-surface-card border-t border-border-subtle py-8 sm:py-10">
-    <div class="max-w-[1440px] mx-auto px-4 sm:px-6 md:px-12 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-secondary text-center sm:text-left">
-      <div class="flex items-center gap-2">
-        <span class="font-bold text-on-surface">ZHINI</span>
-        <span>|</span>
-        <span>by atom8 IT solutions</span>
-      </div>
+    <div
+      class="max-w-[1440px] mx-auto px-4 sm:px-6 md:px-12 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-secondary text-center sm:text-left">
+     
       <p>© 2026 ZHINI | atom8 IT solutions. All rights reserved.</p>
       <div class="flex flex-wrap justify-center sm:justify-start items-center gap-4 sm:gap-6 font-medium">
         <a href="index.html#problem" class="hover:text-primary transition-colors">The Problem</a>
