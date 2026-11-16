@@ -20,13 +20,7 @@
         padding: 0;
       }
       body {
-        overscroll-behavior: none;
-      }
-      main > :first-child {
-        margin-top: 0 !important;
-      }
-      main > :last-child {
-        margin-bottom: 0 !important;
+        overscroll-behavior-y: none;
       }
     }
     ::-webkit-scrollbar {
@@ -74,25 +68,25 @@
   </script>
 </head>
 
-<body class="bg-surface font-body-md text-on-surface antialiased">
+<body class="bg-surface font-body-md text-on-surface antialiased selection:bg-blue-100 selection:text-primary">
 
   <!-- NAVBAR -->
-  <header class="fixed top-0 left-0 right-0 z-50 bg-[#F5F8FF]/85 backdrop-blur-xl border-b border-border-subtle">
-    <div class="h-20 max-w-[1440px] mx-auto px-6 md:px-12 flex items-center justify-between">
-      <a href="index.html" class="flex items-center gap-3">
-        <div class="w-10 h-10 rounded-xl bg-primary flex items-center justify-center text-white font-bold font-headline-sm shadow-sm">
+  <header class="fixed top-0 left-0 right-0 z-50 bg-[#F5F8FF]/90 backdrop-blur-xl border-b border-border-subtle transition-all duration-300">
+    <div class="h-16 sm:h-20 max-w-[1440px] mx-auto px-4 sm:px-6 md:px-12 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-2.5 sm:gap-3">
+        <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-primary flex items-center justify-center text-white font-bold font-headline-sm shadow-sm text-base sm:text-lg">
           Z
         </div>
         <div class="flex flex-col justify-center">
           <div class="flex items-center gap-1.5">
-            <span class="font-headline-sm text-lg tracking-tight text-on-surface leading-none font-bold">ZHINI</span>
-            <span class="px-1.5 py-0.5 rounded-full bg-blue-100 text-primary font-label-sm text-[10px] leading-none font-bold">AI</span>
+            <span class="font-headline-sm text-base sm:text-lg tracking-tight text-on-surface leading-none font-bold">ZHINI</span>
+            <span class="px-1.5 py-0.5 rounded-full bg-blue-100 text-primary font-label-sm text-[9px] sm:text-[10px] leading-none font-bold">AI</span>
           </div>
-          <span class="font-label-sm text-xs text-text-muted">Your Home's AI Genie</span>
+          <span class="font-label-sm text-[11px] sm:text-xs text-text-muted mt-0.5">Your Home's AI Genie</span>
         </div>
       </a>
 
-      <!-- Navigation Links (Technicians removed) -->
+      <!-- Desktop Nav -->
       <nav class="hidden lg:flex items-center gap-2">
         <a class="px-4 py-2 font-label-md text-sm text-secondary hover:bg-surface-container-low hover:text-on-surface rounded-lg transition-colors"
           href="#problem">The Problem</a>
@@ -102,71 +96,99 @@
           href="about.html">About Us</a>
       </nav>
 
-      <div class="flex items-center gap-4">
-        <a class="hidden sm:inline-flex items-center justify-center gap-2 h-11 px-6 rounded-full bg-primary text-white font-label-md text-sm shadow-[0_4px_16px_rgba(43,123,255,0.25)] hover:bg-blue-600 transition-all font-semibold"
+      <div class="flex items-center gap-2 sm:gap-4">
+        <a class="hidden sm:inline-flex items-center justify-center gap-2 h-10 sm:h-11 px-5 sm:px-6 rounded-full bg-primary text-white font-label-md text-xs sm:text-sm shadow-[0_4px_16px_rgba(43,123,255,0.25)] hover:bg-blue-600 transition-all font-semibold"
           href="#download-zone">
           <span class="material-symbols-outlined text-[18px]">download</span>
           <span>Download App</span>
         </a>
+
+        <!-- Mobile Hamburger Button -->
+        <button id="mobile-menu-btn" type="button" aria-label="Toggle navigation menu"
+          class="lg:hidden p-2 rounded-xl text-on-surface hover:bg-surface-container-low transition-colors">
+          <span id="menu-icon" class="material-symbols-outlined text-2xl">menu</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Slide-Down Menu -->
+    <div id="mobile-menu" class="hidden lg:hidden px-4 pt-2 pb-6 bg-[#F5F8FF]/95 backdrop-blur-xl border-b border-border-subtle shadow-lg transition-all">
+      <div class="flex flex-col space-y-2">
+        <a class="mobile-nav-link px-4 py-3 rounded-xl font-label-md text-sm text-secondary hover:bg-surface-container-low hover:text-on-surface font-semibold"
+          href="#problem">The Problem</a>
+        <a class="mobile-nav-link px-4 py-3 rounded-xl font-label-md text-sm text-secondary hover:bg-surface-container-low hover:text-on-surface font-semibold"
+          href="#how-it-works">How It Works</a>
+        <a class="mobile-nav-link px-4 py-3 rounded-xl font-label-md text-sm text-secondary hover:bg-surface-container-low hover:text-on-surface font-semibold"
+          href="about.html">About Us</a>
+        <div class="pt-2">
+          <a class="mobile-nav-link flex items-center justify-center gap-2 w-full h-11 rounded-xl bg-primary text-white font-label-md text-sm shadow-md font-semibold"
+            href="#download-zone">
+            <span class="material-symbols-outlined text-[18px]">download</span>
+            <span>Download App</span>
+          </a>
+        </div>
       </div>
     </div>
   </header>
 
-  <main class="w-full pt-20 bg-surface">
+  <main class="w-full pt-16 sm:pt-20 bg-surface">
     <!-- SECTION 1: HERO -->
-    <section class="relative w-full max-w-[1440px] mx-auto px-6 md:px-12 py-16 lg:py-24 overflow-hidden">
-      <div class="absolute -top-32 -left-20 w-96 h-96 bg-primary/10 rounded-full blur-3xl pointer-events-none -z-10"></div>
-      <div class="absolute top-1/4 right-0 w-[480px] h-[480px] bg-blue-300/15 rounded-full blur-3xl pointer-events-none -z-10"></div>
+    <section class="relative w-full max-w-[1440px] mx-auto px-4 sm:px-6 md:px-12 py-12 sm:py-16 lg:py-24 overflow-hidden">
+      <!-- Glow ambient background -->
+      <div class="absolute -top-32 -left-20 w-72 sm:w-96 h-72 sm:h-96 bg-primary/10 rounded-full blur-3xl pointer-events-none -z-10"></div>
+      <div class="absolute top-1/4 right-0 w-72 sm:w-[480px] h-72 sm:h-[480px] bg-blue-300/15 rounded-full blur-3xl pointer-events-none -z-10"></div>
 
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
         <!-- Left Hero Content -->
-        <div class="lg:col-span-7 flex flex-col justify-center">
-          <div class="inline-flex items-center gap-2 self-start px-3.5 py-1.5 rounded-full bg-blue-100 text-primary mb-6">
-            <span class="text-sm">✨</span>
-            <span class="font-label-sm text-xs tracking-wide font-semibold text-primary">Your Home's AI Genie</span>
+        <div class="lg:col-span-7 flex flex-col justify-center text-left">
+          <div class="inline-flex items-center gap-2 self-start px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full bg-blue-100 text-primary mb-4 sm:mb-6">
+            <span class="text-xs sm:text-sm">✨</span>
+            <span class="font-label-sm text-[11px] sm:text-xs tracking-wide font-semibold text-primary">Your Home's AI Genie</span>
           </div>
 
-          <h1 class="font-display-hero text-4xl lg:text-6xl text-on-surface tracking-tight font-extrabold leading-[1.15]">
-            The AI-Powered Platform Connecting Households, Appliances, and Services — <span class="text-primary">Starting With a Simple Scan.</span>
+          <h1 class="font-display-hero text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-on-surface tracking-tight font-extrabold leading-[1.18] sm:leading-[1.15]">
+            The AI-Powered Platform Connecting Households, Appliances, and Services — <span class="text-primary">Starting With a Simple Scan.</span>[cite: 2]
           </h1>
 
-          <p class="font-body-lg text-lg text-secondary mt-6 leading-relaxed max-w-2xl">
-            Build a single digital relationship around every household appliance. Keep warranties, maintenance history, and trusted repair support right at your fingertips.
+          <p class="font-body-lg text-sm sm:text-base md:text-lg text-secondary mt-4 sm:mt-6 leading-relaxed max-w-2xl">
+            Build a single digital relationship around every household appliance. Keep warranties, maintenance history, and trusted repair support right at your fingertips.[cite: 2]
           </p>
 
           <!-- DOWNLOAD BUTTONS -->
-          <div id="download-zone" class="mt-8 flex flex-col items-start gap-3">
-            <span class="font-label-sm text-xs uppercase font-bold tracking-wider text-secondary">Get the Zhini App Today</span>
-            <div class="flex flex-wrap items-center gap-4">
+          <div id="download-zone" class="mt-6 sm:mt-8 flex flex-col items-start gap-3 w-full sm:w-auto">
+            <span class="font-label-sm text-[11px] sm:text-xs uppercase font-bold tracking-wider text-secondary">Get the Zhini App Today</span>
+            
+            <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full sm:w-auto">
               <!-- App Store Badge -->
               <a id="appstore-link" target="_blank" rel="noopener noreferrer" href="#"
-                class="inline-flex items-center gap-3 px-6 py-3.5 rounded-xl bg-inverse-surface text-white hover:bg-black transition-all shadow-md group">
+                class="inline-flex items-center justify-center gap-3 px-5 py-3 sm:px-6 sm:py-3.5 rounded-xl bg-inverse-surface text-white hover:bg-black transition-all shadow-md group">
                 <svg class="w-6 h-6 fill-current text-white shrink-0" viewBox="0 0 24 24">
                   <path
                     d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.38c.62-.75 1.04-1.8 0.93-2.85-.9.04-1.99.6-2.63 1.35-.57.65-1.07 1.71-.94 2.73 1 .08 2.02-.48 2.64-1.23z">
                   </path>
                 </svg>
                 <div class="flex flex-col text-left">
-                  <span class="text-[10px] uppercase font-medium tracking-wider text-text-muted leading-none">Download on the</span>
-                  <span class="font-headline-sm text-sm font-semibold tracking-tight text-white leading-tight">App Store</span>
+                  <span class="text-[9px] sm:text-[10px] uppercase font-medium tracking-wider text-text-muted leading-none">Download on the</span>
+                  <span class="font-headline-sm text-sm font-semibold tracking-tight text-white leading-tight mt-0.5">App Store</span>
                 </div>
               </a>
 
               <!-- Google Play Badge -->
               <a id="playstore-link" target="_blank" rel="noopener noreferrer"
                 href="https://play.google.com/store/apps/details?id=com.zhini.mobile&hl=en"
-                class="inline-flex items-center gap-3 px-6 py-3.5 rounded-xl bg-inverse-surface text-white hover:bg-black transition-all shadow-md group">
+                class="inline-flex items-center justify-center gap-3 px-5 py-3 sm:px-6 sm:py-3.5 rounded-xl bg-inverse-surface text-white hover:bg-black transition-all shadow-md group">
                 <svg class="w-6 h-6 fill-current text-white shrink-0" viewBox="0 0 24 24">
                   <path
                     d="M3.609 1.814L13.793 12 3.61 22.186c-.368-.376-.61-.954-.61-1.637V3.451c0-.683.242-1.261.609-1.637zm11.246 11.247l2.366 2.365-12.01 6.845 9.644-9.21zm2.366-2.061l-2.366 2.366-9.644-9.21 12.01 6.844zm1.062 1.061l3.528 2.012c.983.56.983 1.48 0 2.04l-3.528 2.012-2.39-2.032 2.39-2.032z">
                   </path>
                 </svg>
                 <div class="flex flex-col text-left">
-                  <span class="text-[10px] uppercase font-medium tracking-wider text-text-muted leading-none">GET IT ON</span>
-                  <span class="font-headline-sm text-sm font-semibold tracking-tight text-white leading-tight">Google Play</span>
+                  <span class="text-[9px] sm:text-[10px] uppercase font-medium tracking-wider text-text-muted leading-none">GET IT ON</span>
+                  <span class="font-headline-sm text-sm font-semibold tracking-tight text-white leading-tight mt-0.5">Google Play</span>
                 </div>
               </a>
             </div>
+
             <p class="font-body-sm text-xs text-secondary mt-1 flex items-center gap-1.5">
               <span class="material-symbols-outlined text-sm text-success">check_circle</span>
               <span>Available on Android &amp; iOS. Free for households.</span>
@@ -175,9 +197,9 @@
         </div>
 
         <!-- Right Hero Mockup Card -->
-        <div class="lg:col-span-5 relative flex items-center justify-center">
+        <div class="lg:col-span-5 relative flex items-center justify-center mt-4 lg:mt-0">
           <div class="relative w-full max-w-sm rounded-3xl p-3 bg-surface-card shadow-[0_20px_50px_rgba(15,28,63,0.08)] border border-border-subtle">
-            <div class="relative rounded-2xl overflow-hidden bg-[#0A1628] p-6 text-white min-h-[380px] flex flex-col justify-between">
+            <div class="relative rounded-2xl overflow-hidden bg-[#0A1628] p-5 sm:p-6 text-white min-h-[360px] sm:min-h-[380px] flex flex-col justify-between">
               <div class="flex justify-between items-center pb-4 border-b border-[#16294A]">
                 <span class="text-xs uppercase tracking-wider text-text-muted font-bold">My Appliances</span>
                 <span class="text-xs px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-[#69F0AE] font-semibold">3 Active</span>
@@ -205,8 +227,8 @@
             </div>
 
             <!-- Floating Pill -->
-            <div class="absolute -top-4 -right-4 hidden sm:flex items-center gap-2 px-3.5 py-2 rounded-xl bg-white shadow-lg border border-border-subtle">
-              <span class="material-symbols-outlined text-success text-lg">verified</span>
+            <div class="absolute -top-3 -right-2 sm:-top-4 sm:-right-4 flex items-center gap-2 px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-xl bg-white shadow-lg border border-border-subtle">
+              <span class="material-symbols-outlined text-success text-base sm:text-lg">verified</span>
               <span class="text-xs font-bold text-on-surface">AI Document Vault</span>
             </div>
           </div>
@@ -215,56 +237,56 @@
     </section>
 
     <!-- SECTION 2: THE PROBLEM -->
-    <section id="problem" class="w-full py-20 bg-surface-container-low">
-      <div class="max-w-[1440px] mx-auto px-6 md:px-12">
+    <section id="problem" class="w-full py-16 sm:py-20 bg-surface-container-low">
+      <div class="max-w-[1440px] mx-auto px-4 sm:px-6 md:px-12">
         <div class="flex flex-col items-center text-center max-w-3xl mx-auto">
           <span class="font-label-sm text-xs font-bold text-primary tracking-widest uppercase mb-2">THE BREAKDOWN REALITY</span>
-          <h2 class="font-headline-lg text-3xl lg:text-4xl text-on-surface tracking-tight font-bold">
-            When an appliance breaks, everything stops.
+          <h2 class="font-headline-lg text-2xl sm:text-3xl lg:text-4xl text-on-surface tracking-tight font-bold">
+            When an appliance breaks, everything stops.[cite: 2]
           </h2>
-          <p class="font-body-md text-base text-secondary mt-3 leading-relaxed">
-            Urban homes own 10 to 25+ appliances, but managing them is still stuck in the past.
+          <p class="font-body-md text-sm sm:text-base text-secondary mt-3 leading-relaxed">
+            Urban homes own 10 to 25+ appliances, but managing them is still stuck in the past.[cite: 2]
           </p>
         </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
-          <div class="flex flex-col p-6 rounded-2xl bg-surface-card border border-border-subtle shadow-sm hover:shadow-md transition-all">
-            <div class="w-12 h-12 rounded-xl bg-red-50 text-error flex items-center justify-center mb-4">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mt-10 sm:mt-12">
+          <div class="flex flex-col p-5 sm:p-6 rounded-2xl bg-surface-card border border-border-subtle shadow-sm hover:shadow-md transition-all">
+            <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-red-50 text-error flex items-center justify-center mb-4">
               <span class="material-symbols-outlined text-2xl">receipt_long</span>
             </div>
-            <h3 class="font-headline-sm text-lg font-bold text-on-surface mb-2">Lost Documents</h3>
-            <p class="font-body-sm text-sm text-secondary leading-relaxed">
-              Warranty cards and invoices misplaced or forgotten right when an emergency hits.
+            <h3 class="font-headline-sm text-base sm:text-lg font-bold text-on-surface mb-2">Lost Documents</h3>
+            <p class="font-body-sm text-xs sm:text-sm text-secondary leading-relaxed">
+              Warranty cards and invoices misplaced or forgotten right when an emergency hits.[cite: 2]
             </p>
           </div>
 
-          <div class="flex flex-col p-6 rounded-2xl bg-surface-card border border-border-subtle shadow-sm hover:shadow-md transition-all">
-            <div class="w-12 h-12 rounded-xl bg-amber-50 text-warning flex items-center justify-center mb-4">
+          <div class="flex flex-col p-5 sm:p-6 rounded-2xl bg-surface-card border border-border-subtle shadow-sm hover:shadow-md transition-all">
+            <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-amber-50 text-warning flex items-center justify-center mb-4">
               <span class="material-symbols-outlined text-2xl">help_center</span>
             </div>
-            <h3 class="font-headline-sm text-lg font-bold text-on-surface mb-2">No Service Clarity</h3>
-            <p class="font-body-sm text-sm text-secondary leading-relaxed">
-              Frustrating confusion between choosing authorized brand service centres vs. trusted technicians.
+            <h3 class="font-headline-sm text-base sm:text-lg font-bold text-on-surface mb-2">No Service Clarity</h3>
+            <p class="font-body-sm text-xs sm:text-sm text-secondary leading-relaxed">
+              Frustrating confusion between choosing authorized brand service centres vs. trusted technicians.[cite: 2]
             </p>
           </div>
 
-          <div class="flex flex-col p-6 rounded-2xl bg-surface-card border border-border-subtle shadow-sm hover:shadow-md transition-all">
-            <div class="w-12 h-12 rounded-xl bg-blue-50 text-primary flex items-center justify-center mb-4">
+          <div class="flex flex-col p-5 sm:p-6 rounded-2xl bg-surface-card border border-border-subtle shadow-sm hover:shadow-md transition-all">
+            <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-blue-50 text-primary flex items-center justify-center mb-4">
               <span class="material-symbols-outlined text-2xl">schedule</span>
             </div>
-            <h3 class="font-headline-sm text-lg font-bold text-on-surface mb-2">Missed Maintenance</h3>
-            <p class="font-body-sm text-sm text-secondary leading-relaxed">
-              Forgotten filters and servicing schedules turning simple upkeep into costly breakdowns.
+            <h3 class="font-headline-sm text-base sm:text-lg font-bold text-on-surface mb-2">Missed Maintenance</h3>
+            <p class="font-body-sm text-xs sm:text-sm text-secondary leading-relaxed">
+              Forgotten filters and servicing schedules turning simple upkeep into costly breakdowns.[cite: 2]
             </p>
           </div>
 
-          <div class="flex flex-col p-6 rounded-2xl bg-surface-card border border-border-subtle shadow-sm hover:shadow-md transition-all">
-            <div class="w-12 h-12 rounded-xl bg-slate-100 text-on-surface flex items-center justify-center mb-4">
+          <div class="flex flex-col p-5 sm:p-6 rounded-2xl bg-surface-card border border-border-subtle shadow-sm hover:shadow-md transition-all">
+            <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-slate-100 text-on-surface flex items-center justify-center mb-4">
               <span class="material-symbols-outlined text-2xl">history_toggle_off</span>
             </div>
-            <h3 class="font-headline-sm text-lg font-bold text-on-surface mb-2">No Lifecycle Record</h3>
-            <p class="font-body-sm text-sm text-secondary leading-relaxed">
-              Zero continuous digital history, leading to repeated repairs and unexpected expenses.
+            <h3 class="font-headline-sm text-base sm:text-lg font-bold text-on-surface mb-2">No Lifecycle Record</h3>
+            <p class="font-body-sm text-xs sm:text-sm text-secondary leading-relaxed">
+              Zero continuous digital history, leading to repeated repairs and unexpected expenses.[cite: 2]
             </p>
           </div>
         </div>
@@ -272,21 +294,21 @@
     </section>
 
     <!-- SECTION 3: THE SOLUTION / HOW IT WORKS -->
-    <section id="how-it-works" class="w-full py-20 max-w-[1440px] mx-auto px-6 md:px-12">
+    <section id="how-it-works" class="w-full py-16 sm:py-20 max-w-[1440px] mx-auto px-4 sm:px-6 md:px-12">
       <div class="flex flex-col items-center text-center max-w-3xl mx-auto">
         <div class="inline-flex items-center px-3 py-1 rounded-full bg-blue-100 text-primary font-label-sm text-xs font-bold uppercase tracking-wider mb-2">
           SIMPLIFIED DOMESTIC OPERATIONS
         </div>
-        <h2 class="font-headline-lg text-3xl lg:text-4xl text-on-surface tracking-tight font-bold">
-          A Digital Relationship Around Every Appliance
+        <h2 class="font-headline-lg text-2xl sm:text-3xl lg:text-4xl text-on-surface tracking-tight font-bold">
+          A Digital Relationship Around Every Appliance[cite: 2]
         </h2>
-        <p class="font-body-md text-base text-secondary mt-3 leading-relaxed">
+        <p class="font-body-md text-sm sm:text-base text-secondary mt-3 leading-relaxed">
           From purchase to maintenance: 4 effortless steps to complete domestic peace of mind.
         </p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-14">
-        <div class="flex flex-col p-6 rounded-2xl bg-surface-card border border-border-subtle shadow-sm hover:shadow-md transition-all">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mt-10 sm:mt-14">
+        <div class="flex flex-col p-5 sm:p-6 rounded-2xl bg-surface-card border border-border-subtle shadow-sm hover:shadow-md transition-all">
           <div class="flex items-center justify-between mb-4">
             <div class="w-10 h-10 rounded-xl bg-primary text-white font-headline-sm text-base flex items-center justify-center font-bold">
               01
@@ -295,13 +317,13 @@
               AI IDENTIFICATION
             </span>
           </div>
-          <h3 class="font-headline-sm text-lg font-bold text-on-surface mb-1">Scan / Add</h3>
-          <p class="font-body-sm text-sm text-secondary leading-relaxed">
-            Identify and register any appliance in seconds using hybrid AI.
+          <h3 class="font-headline-sm text-base sm:text-lg font-bold text-on-surface mb-1">Scan / Add</h3>
+          <p class="font-body-sm text-xs sm:text-sm text-secondary leading-relaxed">
+            Identify and register any appliance in seconds using hybrid AI.[cite: 2]
           </p>
         </div>
 
-        <div class="flex flex-col p-6 rounded-2xl bg-surface-card border border-border-subtle shadow-sm hover:shadow-md transition-all">
+        <div class="flex flex-col p-5 sm:p-6 rounded-2xl bg-surface-card border border-border-subtle shadow-sm hover:shadow-md transition-all">
           <div class="flex items-center justify-between mb-4">
             <div class="w-10 h-10 rounded-xl bg-blue-100 text-primary font-headline-sm text-base flex items-center justify-center font-bold">
               02
@@ -310,13 +332,13 @@
               FREEDOM OF CHOICE
             </span>
           </div>
-          <h3 class="font-headline-sm text-lg font-bold text-on-surface mb-1">Service Options</h3>
-          <p class="font-body-sm text-sm text-secondary leading-relaxed">
-            Choose clearly between official Brand Centres or trusted local repair partners.
+          <h3 class="font-headline-sm text-base sm:text-lg font-bold text-on-surface mb-1">Service Options</h3>
+          <p class="font-body-sm text-xs sm:text-sm text-secondary leading-relaxed">
+            Choose clearly between official Brand Centres or trusted local repair partners.[cite: 2]
           </p>
         </div>
 
-        <div class="flex flex-col p-6 rounded-2xl bg-surface-card border border-border-subtle shadow-sm hover:shadow-md transition-all">
+        <div class="flex flex-col p-5 sm:p-6 rounded-2xl bg-surface-card border border-border-subtle shadow-sm hover:shadow-md transition-all">
           <div class="flex items-center justify-between mb-4">
             <div class="w-10 h-10 rounded-xl bg-emerald-100 text-success font-headline-sm text-base flex items-center justify-center font-bold">
               03
@@ -325,13 +347,13 @@
               REAL-TIME DISPATCH
             </span>
           </div>
-          <h3 class="font-headline-sm text-lg font-bold text-on-surface mb-1">Connect</h3>
-          <p class="font-body-sm text-sm text-secondary leading-relaxed">
-            Direct, transparent booking for quick repairs and ongoing maintenance.
+          <h3 class="font-headline-sm text-base sm:text-lg font-bold text-on-surface mb-1">Connect</h3>
+          <p class="font-body-sm text-xs sm:text-sm text-secondary leading-relaxed">
+            Direct, transparent booking for quick repairs and ongoing maintenance.[cite: 2]
           </p>
         </div>
 
-        <div class="flex flex-col p-6 rounded-2xl bg-surface-card border border-border-subtle shadow-sm hover:shadow-md transition-all">
+        <div class="flex flex-col p-5 sm:p-6 rounded-2xl bg-surface-card border border-border-subtle shadow-sm hover:shadow-md transition-all">
           <div class="flex items-center justify-between mb-4">
             <div class="w-10 h-10 rounded-xl bg-inverse-surface text-white font-headline-sm text-base flex items-center justify-center font-bold">
               04
@@ -340,94 +362,94 @@
               AUTOMATED PEACE
             </span>
           </div>
-          <h3 class="font-headline-sm text-lg font-bold text-on-surface mb-1">Lifecycle</h3>
-          <p class="font-body-sm text-sm text-secondary leading-relaxed">
-            Automated warranty alerts, digital invoices, and preventive maintenance reminders.
+          <h3 class="font-headline-sm text-base sm:text-lg font-bold text-on-surface mb-1">Lifecycle</h3>
+          <p class="font-body-sm text-xs sm:text-sm text-secondary leading-relaxed">
+            Automated warranty alerts, digital invoices, and preventive maintenance reminders.[cite: 2]
           </p>
         </div>
       </div>
     </section>
 
     <!-- SECTION 4: HOUSEHOLD VALUE -->
-    <section class="w-full py-16 max-w-[1440px] mx-auto px-6 md:px-12">
-      <div class="p-8 lg:p-12 rounded-3xl bg-surface-card border border-border-subtle shadow-sm">
-        <div class="max-w-2xl mb-8">
+    <section class="w-full py-12 sm:py-16 max-w-[1440px] mx-auto px-4 sm:px-6 md:px-12">
+      <div class="p-6 sm:p-8 lg:p-12 rounded-3xl bg-surface-card border border-border-subtle shadow-sm">
+        <div class="max-w-2xl mb-6 sm:mb-8 text-left">
           <span class="font-label-sm text-xs font-bold text-primary uppercase tracking-widest">DESIGNED FOR URBAN FAMILIES</span>
-          <h2 class="font-headline-lg text-3xl font-bold text-on-surface tracking-tight mt-1">
+          <h2 class="font-headline-lg text-2xl sm:text-3xl font-bold text-on-surface tracking-tight mt-1">
             Every Machine in Your Home, Fully Protected.
           </h2>
-          <p class="text-secondary text-sm mt-2">
-            Effortless warranty tracking, instant receipt lookups, and one-tap access to maintenance services.
+          <p class="text-secondary text-xs sm:text-sm mt-2">
+            Effortless warranty tracking, instant receipt lookups, and one-tap access to maintenance services.[cite: 2]
           </p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div class="p-6 rounded-2xl bg-surface border border-border-subtle">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
+          <div class="p-5 sm:p-6 rounded-2xl bg-surface border border-border-subtle">
             <span class="material-symbols-outlined text-primary text-2xl mb-3">cloud_done</span>
-            <h3 class="font-headline font-bold text-base text-on-surface">Zero Paper Clutter</h3>
-            <p class="text-xs text-secondary mt-1">Every receipt, invoice, and warranty card permanently vaulted in your cloud ledger.</p>
+            <h3 class="font-headline font-bold text-sm sm:text-base text-on-surface">Zero Paper Clutter</h3>
+            <p class="text-xs text-secondary mt-1">Every receipt, invoice, and warranty card permanently vaulted in your cloud ledger.[cite: 2]</p>
           </div>
-          <div class="p-6 rounded-2xl bg-surface border border-border-subtle">
+          <div class="p-5 sm:p-6 rounded-2xl bg-surface border border-border-subtle">
             <span class="material-symbols-outlined text-warning text-2xl mb-3">notification_important</span>
-            <h3 class="font-headline font-bold text-base text-on-surface">Warranty Radar</h3>
-            <p class="text-xs text-secondary mt-1">Smart notifications warn you well before coverage lapses or warranties expire.</p>
+            <h3 class="font-headline font-bold text-sm sm:text-base text-on-surface">Warranty Radar</h3>
+            <p class="text-xs text-secondary mt-1">Smart notifications warn you well before coverage lapses or warranties expire.[cite: 2]</p>
           </div>
-          <div class="p-6 rounded-2xl bg-surface border border-border-subtle">
+          <div class="p-5 sm:p-6 rounded-2xl bg-surface border border-border-subtle">
             <span class="material-symbols-outlined text-success text-2xl mb-3">verified</span>
-            <h3 class="font-headline font-bold text-base text-on-surface">Digital Service Log</h3>
-            <p class="text-xs text-secondary mt-1">A transparent repair history that preserves the verifiable health and resale value of your appliances.</p>
+            <h3 class="font-headline font-bold text-sm sm:text-base text-on-surface">Digital Service Log</h3>
+            <p class="text-xs text-secondary mt-1">A transparent repair history that preserves the verifiable health and resale value of your appliances.[cite: 2]</p>
           </div>
         </div>
       </div>
     </section>
 
     <!-- SECTION 5: ABOUT SECTION -->
-    <section id="about" class="w-full py-16 bg-surface-container-low">
-      <div class="max-w-[1440px] mx-auto px-6 md:px-12 text-center">
+    <section id="about" class="w-full py-12 sm:py-16 bg-surface-container-low">
+      <div class="max-w-[1440px] mx-auto px-4 sm:px-6 md:px-12 text-center">
         <span class="font-label-sm text-xs font-bold text-primary tracking-widest uppercase mb-2">PRODUCT &amp; ENGINEERING</span>
-        <h2 class="font-headline-lg text-3xl font-bold text-on-surface">Built by atom8 IT solutions</h2>
-        <p class="text-secondary max-w-xl mx-auto mt-2 text-sm">
+        <h2 class="font-headline-lg text-2xl sm:text-3xl font-bold text-on-surface">Built by atom8 IT solutions</h2>
+        <p class="text-secondary max-w-xl mx-auto mt-2 text-xs sm:text-sm">
           Designed by engineers combining high-performance cloud architecture with an understanding of real-world Indian household operations.
         </p>
       </div>
     </section>
 
     <!-- SECTION 6: BOTTOM DOWNLOAD CALL TO ACTION -->
-    <section class="w-full max-w-[1440px] mx-auto px-6 md:px-12 my-16">
-      <div class="relative w-full rounded-3xl bg-inverse-surface text-white p-10 lg:p-16 text-center overflow-hidden shadow-xl">
+    <section class="w-full max-w-[1440px] mx-auto px-4 sm:px-6 md:px-12 my-10 sm:my-16">
+      <div class="relative w-full rounded-3xl bg-inverse-surface text-white p-6 sm:p-10 lg:p-16 text-center overflow-hidden shadow-xl">
         <div class="relative z-10 max-w-2xl mx-auto flex flex-col items-center">
-          <h2 class="font-display-hero text-3xl lg:text-5xl text-white font-extrabold tracking-tight">
+          <h2 class="font-display-hero text-2xl sm:text-3xl lg:text-5xl text-white font-extrabold tracking-tight leading-tight">
             Ready to put your home appliance care on autopilot?
           </h2>
-          <p class="font-body-lg text-base text-text-muted mt-4 leading-relaxed">
-            Download Zhini and register your first appliance in seconds.
+          <p class="font-body-lg text-xs sm:text-base text-text-muted mt-3 sm:mt-4 leading-relaxed">
+            Download Zhini and register your first appliance in seconds.[cite: 2]
           </p>
 
-          <div class="flex flex-wrap items-center justify-center gap-4 mt-8">
+          <div class="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4 mt-6 sm:mt-8 w-full sm:w-auto">
             <a target="_blank" rel="noopener noreferrer" href="#"
-              class="inline-flex items-center gap-3 px-6 py-3.5 rounded-xl bg-white text-on-surface hover:bg-slate-100 transition-all shadow-md group">
+              class="inline-flex items-center justify-center gap-3 px-5 py-3 sm:px-6 sm:py-3.5 rounded-xl bg-white text-on-surface hover:bg-slate-100 transition-all shadow-md group">
               <svg class="w-6 h-6 fill-current text-on-surface shrink-0" viewBox="0 0 24 24">
                 <path
                   d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.38c.62-.75 1.04-1.8 0.93-2.85-.9.04-1.99.6-2.63 1.35-.57.65-1.07 1.71-.94 2.73 1 .08 2.02-.48 2.64-1.23z">
                 </path>
               </svg>
               <div class="flex flex-col text-left">
-                <span class="text-[10px] uppercase font-medium tracking-wider text-secondary leading-none">Download on the</span>
-                <span class="font-headline-sm text-sm font-semibold tracking-tight text-on-surface leading-tight">App Store</span>
+                <span class="text-[9px] sm:text-[10px] uppercase font-medium tracking-wider text-secondary leading-none">Download on the</span>
+                <span class="font-headline-sm text-sm font-semibold tracking-tight text-on-surface leading-tight mt-0.5">App Store</span>
               </div>
             </a>
 
             <a target="_blank" rel="noopener noreferrer"
               href="https://play.google.com/store/apps/details?id=com.zhini.mobile&hl=en"
-              class="inline-flex items-center gap-3 px-6 py-3.5 rounded-xl bg-white text-on-surface hover:bg-slate-100 transition-all shadow-md group">
+              class="inline-flex items-center justify-center gap-3 px-5 py-3 sm:px-6 sm:py-3.5 rounded-xl bg-white text-on-surface hover:bg-slate-100 transition-all shadow-md group">
               <svg class="w-6 h-6 fill-current text-on-surface shrink-0" viewBox="0 0 24 24">
                 <path
                   d="M3.609 1.814L13.793 12 3.61 22.186c-.368-.376-.61-.954-.61-1.637V3.451c0-.683.242-1.261.609-1.637zm11.246 11.247l2.366 2.365-12.01 6.845 9.644-9.21zm2.366-2.061l-2.366 2.366-9.644-9.21 12.01 6.844zm1.062 1.061l3.528 2.012c.983.56.983 1.48 0 2.04l-3.528 2.012-2.39-2.032 2.39-2.032z">
                 </path>
               </svg>
               <div class="flex flex-col text-left">
-                <span class="text-[10px] uppercase font-medium tracking-wider text-secondary leading-none">GET IT ON</span>
-                <span class="font-headline-sm text-sm font-semibold tracking-tight text-on-surface leading-tight">Google Play</span>
+                <span class="text-[9px] sm:text-[10px] uppercase font-medium tracking-wider text-secondary leading-none">GET IT ON</span>
+                <span class="font-headline-sm text-sm font-semibold tracking-tight text-on-surface leading-tight mt-0.5">Google Play</span>
               </div>
             </a>
           </div>
@@ -437,15 +459,15 @@
   </main>
 
   <!-- FOOTER -->
-  <footer class="w-full bg-surface-card border-t border-border-subtle py-10">
-    <div class="max-w-[1440px] mx-auto px-6 md:px-12 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-secondary">
+  <footer class="w-full bg-surface-card border-t border-border-subtle py-8 sm:py-10">
+    <div class="max-w-[1440px] mx-auto px-4 sm:px-6 md:px-12 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-secondary text-center sm:text-left">
       <div class="flex items-center gap-2">
         <span class="font-bold text-on-surface">ZHINI</span>
         <span>|</span>
         <span>by atom8 IT solutions</span>
       </div>
       <p>© 2026 ZHINI | atom8 IT solutions. All rights reserved.</p>
-      <div class="flex flex-wrap items-center gap-6 font-medium">
+      <div class="flex flex-wrap justify-center sm:justify-start items-center gap-4 sm:gap-6 font-medium">
         <a href="index.html#problem" class="hover:text-primary transition-colors">The Problem</a>
         <a href="index.html#how-it-works" class="hover:text-primary transition-colors">How It Works</a>
         <a href="about.html" class="hover:text-primary transition-colors">About Us</a>
@@ -454,6 +476,43 @@
       </div>
     </div>
   </footer>
+
+  <!-- Responsive Mobile Menu Logic -->
+  <script>
+    const mobileBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
+    const navLinks = document.querySelectorAll('.mobile-nav-link');
+
+    function toggleMenu() {
+      const isHidden = mobileMenu.classList.contains('hidden');
+      if (isHidden) {
+        mobileMenu.classList.remove('hidden');
+        menuIcon.textContent = 'close';
+      } else {
+        mobileMenu.classList.add('hidden');
+        menuIcon.textContent = 'menu';
+      }
+    }
+
+    mobileBtn.addEventListener('click', toggleMenu);
+
+    // Auto-close menu when tapping any internal section link
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        menuIcon.textContent = 'menu';
+      });
+    });
+
+    // Close menu when clicking outside header
+    document.addEventListener('click', (e) => {
+      if (!mobileBtn.contains(e.target) && !mobileMenu.contains(e.target)) {
+        mobileMenu.classList.add('hidden');
+        menuIcon.textContent = 'menu';
+      }
+    });
+  </script>
 
 </body>
 

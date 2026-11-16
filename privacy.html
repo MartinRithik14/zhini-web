@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 
 <head>
   <meta charset="utf-8" />
@@ -17,6 +17,9 @@
       html, body {
         margin: 0;
         padding: 0;
+      }
+      body {
+        overscroll-behavior-y: none;
       }
     }
     ::-webkit-scrollbar {
@@ -53,25 +56,25 @@
   </script>
 </head>
 
-<body class="bg-surface font-body text-on-surface antialiased">
+<body class="bg-surface font-body text-on-surface antialiased selection:bg-blue-100 selection:text-primary">
 
-  <!-- NAVIGATION -->
-  <header class="fixed top-0 left-0 right-0 z-50 bg-[#F5F8FF]/85 backdrop-blur-xl border-b border-border-subtle">
-    <div class="h-20 max-w-[1440px] mx-auto px-6 md:px-12 flex items-center justify-between">
-      <a href="index.html" class="flex items-center gap-3">
-        <div class="w-10 h-10 rounded-xl bg-primary flex items-center justify-center text-white font-bold font-headline shadow-sm">
+  <!-- NAVBAR -->
+  <header class="fixed top-0 left-0 right-0 z-50 bg-[#F5F8FF]/90 backdrop-blur-xl border-b border-border-subtle transition-all duration-300">
+    <div class="h-16 sm:h-20 max-w-[1440px] mx-auto px-4 sm:px-6 md:px-12 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-2.5 sm:gap-3">
+        <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-primary flex items-center justify-center text-white font-bold font-headline shadow-sm text-base sm:text-lg">
           Z
         </div>
         <div class="flex flex-col justify-center">
           <div class="flex items-center gap-1.5">
-            <span class="font-headline text-lg tracking-tight text-on-surface leading-none font-bold">ZHINI</span>
-            <span class="px-1.5 py-0.5 rounded-full bg-blue-100 text-primary text-[10px] leading-none font-bold">AI</span>
+            <span class="font-headline text-base sm:text-lg tracking-tight text-on-surface leading-none font-bold">ZHINI</span>
+            <span class="px-1.5 py-0.5 rounded-full bg-blue-100 text-primary text-[9px] sm:text-[10px] leading-none font-bold">AI</span>
           </div>
-          <span class="text-xs text-text-muted">Your Home's AI Genie</span>
+          <span class="text-[11px] sm:text-xs text-text-muted mt-0.5">Your Home's AI Genie</span>
         </div>
       </a>
 
-      <!-- Customer-Only Links -->
+      <!-- Desktop Nav -->
       <nav class="hidden lg:flex items-center gap-2">
         <a class="px-4 py-2 text-sm text-secondary hover:text-on-surface hover:bg-surface-container-low rounded-lg transition-colors"
           href="index.html#problem">The Problem</a>
@@ -81,33 +84,58 @@
           href="about.html">About Us</a>
       </nav>
 
-      <div class="flex items-center gap-4">
-        <a class="inline-flex items-center justify-center gap-2 h-10 px-5 rounded-full bg-primary text-white text-sm font-semibold shadow hover:bg-blue-600 transition-all"
+      <div class="flex items-center gap-2 sm:gap-4">
+        <a class="hidden sm:inline-flex items-center justify-center gap-2 h-10 sm:h-11 px-5 sm:px-6 rounded-full bg-primary text-white text-xs sm:text-sm font-semibold shadow hover:bg-blue-600 transition-all"
           href="index.html#download-zone">
           <span class="material-symbols-outlined text-[18px]">download</span>
           <span>Get App</span>
         </a>
+
+        <!-- Mobile Hamburger Button -->
+        <button id="mobile-menu-btn" type="button" aria-label="Toggle navigation menu"
+          class="lg:hidden p-2 rounded-xl text-on-surface hover:bg-surface-container-low transition-colors">
+          <span id="menu-icon" class="material-symbols-outlined text-2xl">menu</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Slide-Down Menu -->
+    <div id="mobile-menu" class="hidden lg:hidden px-4 pt-2 pb-6 bg-[#F5F8FF]/95 backdrop-blur-xl border-b border-border-subtle shadow-lg transition-all">
+      <div class="flex flex-col space-y-2">
+        <a class="mobile-nav-link px-4 py-3 rounded-xl text-sm text-secondary hover:bg-surface-container-low hover:text-on-surface font-semibold"
+          href="index.html#problem">The Problem</a>
+        <a class="mobile-nav-link px-4 py-3 rounded-xl text-sm text-secondary hover:bg-surface-container-low hover:text-on-surface font-semibold"
+          href="index.html#how-it-works">How It Works</a>
+        <a class="mobile-nav-link px-4 py-3 rounded-xl text-sm text-secondary hover:bg-surface-container-low hover:text-on-surface font-semibold"
+          href="about.html">About Us</a>
+        <div class="pt-2">
+          <a class="mobile-nav-link flex items-center justify-center gap-2 w-full h-11 rounded-xl bg-primary text-white text-sm shadow-md font-semibold"
+            href="index.html#download-zone">
+            <span class="material-symbols-outlined text-[18px]">download</span>
+            <span>Get App</span>
+          </a>
+        </div>
       </div>
     </div>
   </header>
 
-  <main class="pt-28 pb-20">
-    <div class="max-w-4xl mx-auto px-6 py-12">
+  <main class="pt-20 sm:pt-28 pb-16 sm:pb-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 md:px-12 py-8 sm:py-12">
       <span class="text-xs font-bold text-primary tracking-widest uppercase mb-2 block font-headline">LEGAL COMPLIANCE</span>
-      <h1 class="text-3xl lg:text-4xl font-headline font-bold text-on-surface">Privacy Policy</h1>
-      <p class="text-xs text-secondary mt-2">Last Updated: November 2026</p>
+      <h1 class="text-2xl sm:text-3xl lg:text-4xl font-headline font-bold text-on-surface">Privacy Policy</h1>
+      <p class="text-xs text-secondary mt-1 sm:mt-2">Last Updated: November 2026</p>
 
-      <div class="mt-8 space-y-8 text-secondary text-sm leading-relaxed bg-surface-card p-8 md:p-12 rounded-3xl border border-border-subtle shadow-sm">
+      <div class="mt-6 sm:mt-8 space-y-6 sm:space-y-8 text-secondary text-xs sm:text-sm leading-relaxed bg-surface-card p-5 sm:p-8 md:p-12 rounded-3xl border border-border-subtle shadow-sm">
         
         <section>
-          <h2 class="text-lg font-headline font-bold text-on-surface mb-2">1. Overview</h2>
+          <h2 class="text-base sm:text-lg font-headline font-bold text-on-surface mb-2">1. Overview</h2>
           <p>
             ZHINI ("we", "us", or "our"), operated by atom8 IT solutions, is dedicated to protecting household privacy. This Privacy Policy outlines how user information is collected, stored, encrypted, and utilized across our mobile applications, web portals, and associated services.
           </p>
         </section>
 
         <section>
-          <h2 class="text-lg font-headline font-bold text-on-surface mb-2">2. Information We Collect</h2>
+          <h2 class="text-base sm:text-lg font-headline font-bold text-on-surface mb-2">2. Information We Collect</h2>
           <ul class="list-disc pl-5 space-y-2">
             <li><strong>Account Details:</strong> Name, phone number, email address, and general residential area or apartment society.</li>
             <li><strong>Appliance &amp; Document Data:</strong> Appliance brand, model numbers, serial numbers, uploaded purchase invoices, warranty cards, and images captured for AI document parsing.</li>
@@ -117,14 +145,14 @@
         </section>
 
         <section>
-          <h2 class="text-lg font-headline font-bold text-on-surface mb-2">3. Camera &amp; Storage Permissions</h2>
+          <h2 class="text-base sm:text-lg font-headline font-bold text-on-surface mb-2">3. Camera &amp; Storage Permissions</h2>
           <p>
             ZHINI requests device camera and storage permissions solely to enable users to photograph or upload appliance nameplates, invoices, and warranty documents for OCR parsing and secure cloud storage. We do not access, scan, or retrieve private media outside of explicitly uploaded assets.
           </p>
         </section>
 
         <section>
-          <h2 class="text-lg font-headline font-bold text-on-surface mb-2">4. How We Use Your Data</h2>
+          <h2 class="text-base sm:text-lg font-headline font-bold text-on-surface mb-2">4. How We Use Your Data</h2>
           <ul class="list-disc pl-5 space-y-2">
             <li>To extract warranty durations, model numbers, and purchase dates using hybrid AI models.</li>
             <li>To alert households before warranty expiration or recommend routine preventive upkeep.</li>
@@ -134,21 +162,21 @@
         </section>
 
         <section>
-          <h2 class="text-lg font-headline font-bold text-on-surface mb-2">5. Data Sharing &amp; Disclosure</h2>
+          <h2 class="text-base sm:text-lg font-headline font-bold text-on-surface mb-2">5. Data Sharing &amp; Disclosure</h2>
           <p>
             We do not sell personal information. When a service request is placed, only necessary details (appliance type, fault description, and contact location) are shared with the chosen service center or technician.
           </p>
         </section>
 
         <section>
-          <h2 class="text-lg font-headline font-bold text-on-surface mb-2">6. Security &amp; Retention</h2>
+          <h2 class="text-base sm:text-lg font-headline font-bold text-on-surface mb-2">6. Security &amp; Retention</h2>
           <p>
             Uploaded invoices and documents are securely stored using enterprise-grade cloud storage with industry-standard TLS/SSL encryption in transit and AES encryption at rest. Users retain full control over their data and may request deletion of their account and documents at any time.
           </p>
         </section>
 
         <section>
-          <h2 class="text-lg font-headline font-bold text-on-surface mb-2">7. Contact Us</h2>
+          <h2 class="text-base sm:text-lg font-headline font-bold text-on-surface mb-2">7. Contact Us</h2>
           <p>
             For any questions, concerns, or data deletion requests, contact us at:
             <br />
@@ -163,15 +191,15 @@
   </main>
 
   <!-- FOOTER -->
-  <footer class="w-full bg-surface-card border-t border-border-subtle py-10">
-    <div class="max-w-[1440px] mx-auto px-6 md:px-12 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-secondary">
+  <footer class="w-full bg-surface-card border-t border-border-subtle py-8 sm:py-10">
+    <div class="max-w-[1440px] mx-auto px-4 sm:px-6 md:px-12 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-secondary text-center sm:text-left">
       <div class="flex items-center gap-2">
         <span class="font-bold text-on-surface">ZHINI</span>
         <span>|</span>
         <span>by atom8 IT solutions</span>
       </div>
       <p>© 2026 ZHINI | atom8 IT solutions. All rights reserved.</p>
-      <div class="flex flex-wrap items-center gap-6 font-medium">
+      <div class="flex flex-wrap justify-center sm:justify-start items-center gap-4 sm:gap-6 font-medium">
         <a href="index.html#problem" class="hover:text-primary transition-colors">The Problem</a>
         <a href="index.html#how-it-works" class="hover:text-primary transition-colors">How It Works</a>
         <a href="about.html" class="hover:text-primary transition-colors">About Us</a>
@@ -180,6 +208,41 @@
       </div>
     </div>
   </footer>
+
+  <!-- Responsive Mobile Menu Script -->
+  <script>
+    const mobileBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
+    const navLinks = document.querySelectorAll('.mobile-nav-link');
+
+    function toggleMenu() {
+      const isHidden = mobileMenu.classList.contains('hidden');
+      if (isHidden) {
+        mobileMenu.classList.remove('hidden');
+        menuIcon.textContent = 'close';
+      } else {
+        mobileMenu.classList.add('hidden');
+        menuIcon.textContent = 'menu';
+      }
+    }
+
+    mobileBtn.addEventListener('click', toggleMenu);
+
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        menuIcon.textContent = 'menu';
+      });
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!mobileBtn.contains(e.target) && !mobileMenu.contains(e.target)) {
+        mobileMenu.classList.add('hidden');
+        menuIcon.textContent = 'menu';
+      }
+    });
+  </script>
 
 </body>
 
