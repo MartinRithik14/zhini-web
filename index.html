@@ -22,6 +22,11 @@
         padding: 0;
       }
 
+      html {
+        /* Account for fixed navbar height when jumping to anchors */
+        scroll-padding-top: 5.5rem; /* ~88px: covers h-16/h-20 + a little breathing room */
+      }
+
       body {
         overscroll-behavior-y: none;
       }
@@ -29,6 +34,16 @@
 
     ::-webkit-scrollbar {
       display: none;
+    }
+
+    /* Extra safety for key sections */
+    #download-zone,
+    #problem,
+    #choice-transparency,
+    #live-tracker,
+    #how-it-works,
+    #about {
+      scroll-margin-top: 5.5rem;
     }
   </style>
   <script src="https://cdn.tailwindcss.com"></script>
